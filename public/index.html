@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>System Message</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <!-- 1. Boot -->
+  <section id="boot" class="screen active">
+    <div class="terminal glass">
+      <div class="terminal-bar"><i></i><i></i><i></i><span>proposal@secure-shell:~</span></div>
+      <div id="bootLog" class="terminal-body"></div>
+      <div class="progress"><div id="bootBar"></div></div>
+    </div>
+  </section>
+
+  <!-- 2. Proposal -->
+  <section id="proposal" class="screen">
+    <div class="card glass">
+      <div class="heart-wrap"><div class="heart" aria-hidden="true"></div></div>
+      <p class="tag" id="sysTag"></p>
+      <p class="line serif big" id="l1">After running countless lines of code,<br>I found one thing I could never debug...</p>
+      <p class="line you" id="l2">YOU <span class="pulse-heart">❤️</span></p>
+      <p class="line serif" id="l3">I don't know what the future looks like,<br>but I know I want you to be a part of it.</p>
+      <p class="line question" id="l4">Will you be mine?</p>
+      <div class="buttons line" id="l5">
+        <button class="btn yes" id="yesBtn">YES ❤️</button>
+        <button class="btn maybe" id="maybeBtn">NO 😳</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Yes -->
+  <section id="yes" class="screen">
+    <div class="card glass success">
+      <p class="tag granted">ACCESS GRANTED ❤️</p>
+      <p class="serif big">Looks like my favorite person<br>just said YES.</p>
+      <p class="serif soft">You just made the happiest commit of my life.<br>No bugs, no errors, no rollbacks.<br>Just you, me, and every good thing we'll build together.</p>
+      <p class="mono small">status: <span class="ok">forever.deploy() → success</span></p>
+    </div>
+  </section>
+
+  <!-- 4. Maybe -->
+  <section id="maybe" class="screen">
+    <div class="card glass">
+      <p class="tag">PENDING...</p>
+      <p class="serif big">That's okay ❤️<br>I'll wait for your answer.</p>
+      <p class="serif soft">Take all the time you need. No pressure, ever.</p>
+      <button class="btn back" id="backBtn">← Back to the message</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
